@@ -13,7 +13,7 @@ import com.emp.sample.Employee;
 public class Solution {
 
 	public static void main(String[] args) throws IOException {
-		SessionFactory sf = new Configuration().buildSessionFactory();
+		SessionFactory sf = new Configuration().configure().buildSessionFactory();
 		Session session = sf.openSession();
 		BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
 		System.out.print("Enter id:");
@@ -24,10 +24,9 @@ public class Solution {
 		String emailId=bf.readLine();
 		System.out.println("Enter Phone no:");
 		long phone=Long.valueOf(bf.readLine());
-		System.out.println("Enter gender:");
-		boolean gender=Boolean.valueOf(bf.readLine());
-		Employee employee = new Employee(id, name, emailId, phone, gender);
-		System.out.println(employee.getId()+" "+employee.getName()+" "+employee.getEmailId()+" "+employee.getPhone()+" "+employee.isGender());
+		
+		Employee employee = new Employee(id, name, emailId, phone);
+		System.out.println(employee.getId()+" "+employee.getName()+" "+employee.getEmailId()+" "+employee.getPhone());
 		session.close();
 		System.exit(0);
 	}

@@ -10,15 +10,14 @@ public class Employee {
 	private String name;
 	private String emailId;
 	private long phone;
-	private boolean gender;
-
-	public Employee(int id, String name, String emailId, long phone, boolean gender) {
+	
+	public Employee(int id, String name, String emailId, long phone) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.emailId = emailId;
 		this.phone = phone;
-		this.gender = gender;
+		
 	}
 
 	public int getId() {
@@ -53,12 +52,6 @@ public class Employee {
 		this.phone = phone;
 	}
 
-	public boolean isGender() {
-		return gender;
-	}
 
-	public void setGender(boolean gender) {
-		this.gender = gender;
-	}
 
 }
